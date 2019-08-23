@@ -31,12 +31,10 @@ public class CrapsGame
 				if (diceSum == 2 || diceSum == 12)
 				{	
 					System.out.println("You loose," + userName +"! Thanks for playing.");
-					System.exit(0);
 				}
 				else if (diceSum == 7 || diceSum == 11)
 				{
 					System.out.println("You win " + userName + "! Thanks for playing.");
-					System.exit(0);
 				}
 				else
 				{
@@ -60,19 +58,20 @@ public class CrapsGame
 						//This is the checking to win on second round
 						if(diceSumSecondRound == userPoints)
 						{
-							System.out.println("You win " + userName + "!!!!");
+							System.out.println("\nYou win " + userName + "!!!!");
 							playingSecondRound = false;
-							System.exit(0);
 						}
 						if(diceSumSecondRound == 7)
 						{
-							System.out.println("You LOOSE " + userName + "!!!!");
+							System.out.println("\nYou LOOSE " + userName + "!!!!");
 							playingSecondRound = false;
-							System.exit(0);
 						}
 					}
 					
 				}
+				
+				//The game is now over
+				System.exit(0);
 
 			}
 
