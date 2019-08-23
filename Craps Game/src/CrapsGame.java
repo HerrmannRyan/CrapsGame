@@ -14,15 +14,15 @@ public class CrapsGame
 				
 				//Speaking Name
 				String userName = userInput.nextLine();
-				System.out.println("Hello " + userName + " Let\'s play a game of Craps!");
-				System.out.println("The Dice are rolling!");
+				System.out.println("Hello " + userName + " Let\'s play a game of Craps! \n");
+				System.out.println("The Dice are rolling!\n");
 				
 				//Rolling and creating the dice
 				
 				int diceOne = (int)(Math.random()*6 + 1);
 				int diceTwo = (int)(Math.random()*6 + 1);
 				int diceSum = diceOne + diceTwo;
-				System.out.println(userName + ", your rolls are \n" + diceOne + "\n" + diceTwo + "\nThat is equal to \n" + diceSum);
+				System.out.println(userName + ", your rolls are " + diceOne + " and " + diceTwo + " That is equal to " + diceSum + "\n");
 				
 				//Boolean for second round
 				boolean playingSecondRound = false;
@@ -35,18 +35,19 @@ public class CrapsGame
 				}
 				else if (diceSum == 7 || diceSum == 11)
 				{
-					System.out.println("You Win" + userName + "! Thanks for playing.");
+					System.out.println("You win " + userName + "! Thanks for playing.");
 					System.exit(0);
 				}
 				else
 				{
 					//This is setting for attempt 2
-					System.out.println("Your points are " + diceSum + ". Rolling again to see if you win, " + userName + "!");
+					System.out.println("Your points are " + diceSum + ". Rolling again to see if you win, " + userName + "! \n");
 					playingSecondRound = true;
 					
 					//While loop to figure out next round
 					while (playingSecondRound) 
 					{
+						//Creating dice for second round
 						int diceOneSecondRound = (int)(Math.random()*6 + 1);
 						int diceTwoSecondRound = (int)(Math.random()*6 + 1);
 						int diceSumSecondRound = diceOneSecondRound + diceTwoSecondRound;
@@ -54,7 +55,21 @@ public class CrapsGame
 						
 						//Stating rolling output
 						
-						System.out.println("Your point is " + userPoints + ", and you rolled a " + diceOneSecondRound + "and a " + diceTwoSecondRound + " for a total of " + diceSumSecondRound);
+						System.out.println("Your point is " + userPoints + ", and you rolled a " + diceOneSecondRound + " and a " + diceTwoSecondRound + " for a total of " + diceSumSecondRound);
+						
+						//This is the checking to win on second round
+						if(diceSumSecondRound == userPoints)
+						{
+							System.out.println("You win " + userName + "!!!!");
+							playingSecondRound = false;
+							System.exit(0);
+						}
+						if(diceSumSecondRound == 7)
+						{
+							System.out.println("You LOOSE " + userName + "!!!!");
+							playingSecondRound = false;
+							System.exit(0);
+						}
 					}
 					
 				}
