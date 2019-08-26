@@ -2,27 +2,47 @@ import java.util.Scanner;
 
 public class CrapsGame
 	{
+		//Uploaded from Home 8-23-2019 @ 16:30
+		//New Craps Game
+		static Scanner userInput = new Scanner (System.in);
+		static String userName;
+		static String enterToRollDice;
+		static int diceOne;
+		static int diceTwo;
+		static int diceSum;
 
 		public static void main(String[] args)
-			{
-				//Uploaded from Home 8-23-2019 @ 16:30
-				//New Craps Game
-				Scanner userInput = new Scanner (System.in);
+		{
+			greetPlayer();
+			createRoundOneDice();
+		}
 				
-				// Welcoming player to the new game
-				System.out.println("Hello welcome to Craps. What is your name?");
+		public static void greetPlayer()
+		{
+			// Welcoming player to the new game
+			System.out.println("Hello welcome to Craps. What is your name?");
+			
+			//Speaking Name
+			userName = userInput.nextLine();
+			System.out.println("Hello " + userName + " Let\'s play a game of Craps! Press enter to roll the die!");
+			enterToRollDice = userInput.nextLine();
+			System.out.println("The Dice are rolling!\n");
+		}
+		
+		public static void createRoundOneDice()
+		{
+			//Rolling and creating the dice
+			int diceOne = (int)(Math.random()*6 + 1);
+			int diceTwo = (int)(Math.random()*6 + 1);
+			diceSum = diceOne + diceTwo;
+		}
+		
+		public static void rollAndEvaluateRoundOne()
+		{
+			System.out.println(userName + ", your rolls are " + diceOne + " and " + diceTwo + " That is equal to " + diceSum + "\n");
+		}
 				
-				//Speaking Name
-				String userName = userInput.nextLine();
-				System.out.println("Hello " + userName + " Let\'s play a game of Craps! \n");
-				System.out.println("The Dice are rolling!\n");
-				
-				//Rolling and creating the dice
-				
-				int diceOne = (int)(Math.random()*6 + 1);
-				int diceTwo = (int)(Math.random()*6 + 1);
-				int diceSum = diceOne + diceTwo;
-				System.out.println(userName + ", your rolls are " + diceOne + " and " + diceTwo + " That is equal to " + diceSum + "\n");
+/*
 				
 				//Boolean for second round
 				boolean playingSecondRound = false;
@@ -39,9 +59,9 @@ public class CrapsGame
 				else
 				{
 					//This is setting for attempt 2
-					System.out.println("Your points are " + diceSum + ". Rolling again to see if you win, " + userName + "! \n");
+					System.out.println("Your points are " + diceSum + ". Roll again to see if you win, " + userName + "! \n");
 					playingSecondRound = true;
-					
+				}	
 					//While loop to figure out next round
 					while (playingSecondRound) 
 					{
@@ -67,12 +87,9 @@ public class CrapsGame
 							playingSecondRound = false;
 						}
 					}
-					
-				}
 				
 				//The game is now over
-				System.exit(0);
+				System.exit(0); */
 
-			}
 
 	}
