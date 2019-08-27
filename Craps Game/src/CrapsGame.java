@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class CrapsGame
 	{
@@ -15,8 +16,9 @@ public class CrapsGame
 		static int secondRoundDiceSum;
 		static boolean playingSecondRound = false;
 		static int userPoints;
-
-		public static void main(String[] args)
+		
+		
+		public static void main(String[] args) throws InterruptedException
 		{
 			greetPlayer();
 			rollRoundOneDice();
@@ -29,7 +31,7 @@ public class CrapsGame
 			
 		}
 				
-		public static void greetPlayer()
+		public static void greetPlayer() throws InterruptedException 
 		{
 			// Welcoming player to the new game
 			System.out.println("Hello welcome to Craps. What is your name?");
@@ -39,6 +41,8 @@ public class CrapsGame
 			System.out.println("Hello " + userName + " Let\'s play a game of Craps! Press enter to roll the die!");
 			enterToRollDice = userInput.nextLine();
 			System.out.println("The Dice are rolling!\n");
+			TimeUnit.SECONDS.sleep(2);
+			
 		}
 		
 		public static void rollRoundOneDice()
@@ -94,18 +98,18 @@ public class CrapsGame
 			if(secondRoundDiceSum == userPoints)
 			{
 				System.out.println("\nYou win " + userName + "!!!!");
-				playingSecondRound = false;
+				System.exit(0);
 			}
 			if(secondRoundDiceSum == 7)
 			{
 				System.out.println("\nYou LOOSE " + userName + "!!!!");
-				playingSecondRound = false;
+				System.exit(0);
 			}
 			
 			else
 			{
-			System.out.println("Press enter to Roll again!");
-			enterToRollDice = userInput.nextLine();
+				System.out.println("Press enter to Roll again!");
+				enterToRollDice = userInput.nextLine();
 			}
 		
 		}
