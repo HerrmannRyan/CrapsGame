@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 public class CrapsGame
 	{
 		//Uploaded from Home 8-23-2019 @ 16:30
+		//New Commit from Home 8-27-2019 @ 21:01
 		//New Craps Game
 		static Scanner userInput = new Scanner (System.in);
 		static String userName;
