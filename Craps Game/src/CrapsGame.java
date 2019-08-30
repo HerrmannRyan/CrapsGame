@@ -62,7 +62,7 @@ public class CrapsGame
 			// Checking on the first try.
 			if (diceSum == 2 || diceSum == 12)
 			{	
-				System.out.println("You loose," + userName +"! Thanks for playing.");
+				System.out.println("You lose," + userName +"! Thanks for playing.");
 				System.exit(0);
 			}
 			else if (diceSum == 7 || diceSum == 11)
@@ -103,7 +103,7 @@ public class CrapsGame
 			}
 			if(secondRoundDiceSum == 7)
 			{
-				System.out.println("\nYou LOOSE " + userName + "!!!!");
+				System.out.println("\nYou LOSE " + userName + "!!!!");
 				System.exit(0);
 			}
 			
